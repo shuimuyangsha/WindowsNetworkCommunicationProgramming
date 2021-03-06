@@ -1,0 +1,242 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (中国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Ftp.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Ftp.ico"
+IDI_FOLDER              ICON    DISCARDABLE     "dir.ico"
+IDI_FILE                ICON    DISCARDABLE     "file.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 273, 147
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 Ftp"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "Ftp 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2011",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,197,15,50,14,WS_GROUP
+    LTEXT           "    请输入服务器地址、用户名和密码后点击连接按钮进行连接，在这之前可先根据需要选择ASCII或二进制的传输模式，可选择主动建立连接或被动建立连接的方式，相关的状态信息会在最下方的EDIT控件中提示，左边是对应本地文件的一个浏览器，连接成功后，双击本地文件（左边）或点击上传按钮均可实现上传，双击服务器文件（右边）或点击下载按钮均可下载服务器文件，也可对服务器文件进行移除操作，但要注意的是，不同的服务器方配置可能不同，比如服务器ftp://ftp2.gdut.edu.cn只能在服务器规定的区域进行限定操作",
+                    IDC_STATIC,23,43,239,84
+    LTEXT           "班级：08计科1班 学号：x 姓名：x",IDC_STATIC,116,126,138,
+                    18
+END
+
+IDD_FTP_DIALOG DIALOGEX 0, 0, 525, 373
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Ftp"
+FONT 9, "宋体"
+BEGIN
+    EDITTEXT        IDC_EDIT_SERVER,42,11,95,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_NAME,171,11,69,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PASSWORD,267,11,88,12,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    LTEXT           "FTP地址",IDC_STATIC,7,14,29,8
+    LTEXT           "用户名",IDC_STATIC,139,14,25,8
+    LTEXT           "密码",IDC_STATIC,245,14,17,8
+    PUSHBUTTON      "连接",IDC_BTN_CONNECT,360,10,50,14
+    PUSHBUTTON      "关闭连接",IDC_BTN_CLOSE,360,34,50,14
+    COMBOBOX        IDC_COMBOBOXEX_LOCAL,11,70,245,129,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBOBOXEX_SERVER,267,70,245,124,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "List3",IDC_LIST_LOCALFILE,"SysListView32",LVS_REPORT | 
+                    LVS_AUTOARRANGE | LVS_EDITLABELS | WS_BORDER | 
+                    WS_TABSTOP,11,93,245,192
+    CONTROL         "List4",IDC_LIST_SERVERFILE,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,267,93,245,192
+    EDITTEXT        IDC_EDIT_MESSAGE,11,300,491,56,ES_MULTILINE | 
+                    ES_READONLY | WS_VSCROLL
+    LTEXT           "双击本地文件进行上传，双击服务器文件进行下载",
+                    IDC_STATIC,47,33,221,12
+    GROUPBOX        "状态信息",IDC_STATIC,5,292,508,75
+    CONTROL         "二进制",IDC_BINARY,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,426,13,36,10
+    CONTROL         "ASCII",IDC_ASCII,"Button",BS_AUTORADIOBUTTON,426,25,40,
+                    10
+    CONTROL         "自动",IDC_AUTO,"Button",BS_AUTORADIOBUTTON,426,37,32,10
+    CONTROL         "主动",IDC_ACTIVE,"Button",BS_AUTORADIOBUTTON | WS_GROUP | 
+                    WS_TABSTOP,473,13,32,10
+    CONTROL         "被动",IDC_PASSIVE,"Button",BS_AUTORADIOBUTTON,473,31,32,
+                    10
+    GROUPBOX        "",IDC_STATIC,419,3,48,46
+    GROUPBOX        "",IDC_STATIC,471,4,42,44
+    PUSHBUTTON      "上传",IDC_BTNUP,202,52,31,14
+    PUSHBUTTON      "下载",IDC_BTNDOWN,273,52,31,14
+    PUSHBUTTON      "删除",IDC_BTNDEL,308,52,31,14
+    GROUPBOX        "",IDC_STATIC,5,47,255,244
+    GROUPBOX        "",IDC_STATIC,264,45,255,250
+    EDITTEXT        IDC_EDITPORT,480,53,25,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "端口号：",IDC_STATIC,448,55,33,8
+    PUSHBUTTON      "帮助",IDC_BTNHELP,7,30,26,16,0,WS_EX_CLIENTEDGE | 
+                    WS_EX_STATICEDGE
+    CONTROL         "匿名",IDC_CHKANONYMOUS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,404,55,32,10
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "Ftp Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "Ftp\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2011\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "Ftp.EXE\0"
+            VALUE "ProductName", "Ftp 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_FTP_DIALOG, DIALOG
+    BEGIN
+        VERTGUIDE, 468
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 Ftp(&A)..."
+END
+
+#endif    // Chinese (中国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\Ftp.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
