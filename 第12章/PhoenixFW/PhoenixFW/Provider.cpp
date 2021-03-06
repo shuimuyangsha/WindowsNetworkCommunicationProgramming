@@ -42,6 +42,7 @@ void FreeProvider(LPWSAPROTOCOL_INFOW pProtoInfo)
 
 BOOL InstallProvider(WCHAR *pwszPathName)
 {
+	int i;
 	WCHAR wszLSPName[] = L"PhoenixLSP";
 	LPWSAPROTOCOL_INFOW pProtoInfo;
 	int nProtocols;
@@ -59,7 +60,7 @@ BOOL InstallProvider(WCHAR *pwszPathName)
 	BOOL bFindUdp = FALSE;
 	BOOL bFindTcp = FALSE;
 	BOOL bFindRaw = FALSE;
-	for(int i=0; i<nProtocols; i++)
+	for(i=0; i<nProtocols; i++)
 	{
 		if(pProtoInfo[i].iAddressFamily == AF_INET)
 		{
@@ -191,6 +192,7 @@ BOOL InstallProvider(WCHAR *pwszPathName)
 
 BOOL RemoveProvider()
 {
+	int i;
 	LPWSAPROTOCOL_INFOW pProtoInfo;
 	int nProtocols;
 	DWORD dwLayeredCatalogId;
@@ -198,7 +200,7 @@ BOOL RemoveProvider()
 	// 根据Guid取得分层协议的目录ID号
 	pProtoInfo = GetProvider(&nProtocols);
 	int nError;
-	for(int i=0; i<nProtocols; i++)
+	for(i=0; i<nProtocols; i++)
 	{
 		if(memcmp(&ProviderGuid, &pProtoInfo[i].ProviderId, sizeof(ProviderGuid)) == 0)
 		{

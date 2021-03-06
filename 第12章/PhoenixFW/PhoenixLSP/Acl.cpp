@@ -279,10 +279,12 @@ int CAcl::GetAccessFromWorkMode(SESSION *pSession)
 	return PF_UNKNOWN;
 }
 
+int nIndex;
 int CAcl::FindRule(TCHAR *szAppName, int nStart)
 {
+	int nIndex;
 	// 从指定位置开始查找，返回规则的索引
-	for(int nIndex = nStart; nIndex < (int)g_RuleCount; nIndex++)
+	for(nIndex = nStart; nIndex < (int)g_RuleCount; nIndex++)
 	{
 		if(wcsicmp(szAppName, g_Rule[nIndex].szApplication) == 0)
 			break;
@@ -420,7 +422,8 @@ void CAcl::SetSession(SESSION *pSession, USHORT usRemotePort, ULONG ulRemoteIP, 
 
 int CAcl::FindSession(SOCKET s)
 {
-	for(int i=0; i<m_nSessionCount; i++)
+	int i;
+	for(i=0; i<m_nSessionCount; i++)
 	{
 		if(m_pSession[i].s == s)
 		{
@@ -432,11 +435,12 @@ int CAcl::FindSession(SOCKET s)
 
 void CAcl::NotifySession(SESSION *pSession, int nCode)
 {	
+	int i;
 	ODS(L" NotifySession... ");
 	if(g_hPhoenixWnd != NULL)
 	{
 		// 在g_SessionBuffer数组中查找一个未使用的成员
-		for(int i=0; i<MAX_SESSION_BUFFER; i++)
+		for(i=0; i<MAX_SESSION_BUFFER; i++)
 		{
 			if(g_SessionBuffer[i].s == 0)
 			{

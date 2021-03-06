@@ -11,7 +11,7 @@
 
 void main()
 {
-	char szDestIP[] = "192.168.0.23";
+	char szDestIP[] = "192.168.1.35";
 
 	// ∑¢ÀÕARP«Î«Û
 	u_char arDestMac[6] = { 0xff, 0xff, 0xff, 0xff, 0xff, 0xff };

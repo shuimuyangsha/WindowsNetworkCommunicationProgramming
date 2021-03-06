@@ -53,6 +53,7 @@ int WSPAPI WSPStartup(
   LPWSPPROC_TABLE lpProcTable
 )
 {
+	int i;
 	ODS1(L"  WSPStartup...  %s \n", g_szCurrentApp);
 	
 	if(lpProtocolInfo->ProtocolChain.ChainLen <= 1)
@@ -69,7 +70,7 @@ int WSPAPI WSPStartup(
 	LPWSAPROTOCOL_INFOW pProtoInfo = GetProvider(&nTotalProtos);
 	// ÏÂ²ãÈë¿ÚID	
 	DWORD dwBaseEntryId = lpProtocolInfo->ProtocolChain.ChainEntries[1];
-	for(int i=0; i<nTotalProtos; i++)
+	for(i=0; i<nTotalProtos; i++)
 	{
 		if(pProtoInfo[i].dwCatalogEntryId == dwBaseEntryId)
 		{

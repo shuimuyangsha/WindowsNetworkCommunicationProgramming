@@ -3,8 +3,13 @@
 //      are changed infrequently
 //
 
+
+//#define _WIN32_WINNT 0x0502
+
 #if !defined(AFX_STDAFX_H__0C568B09_4D19_40F6_9213_484EB885C0B1__INCLUDED_)
 #define AFX_STDAFX_H__0C568B09_4D19_40F6_9213_484EB885C0B1__INCLUDED_
+
+
 
 #if _MSC_VER > 1000
 #pragma once
